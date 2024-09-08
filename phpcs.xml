@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ruleset name="MeroGutenForms Coding Standards">
+    <description>MeroGutenForms dev PHP_CodeSniffer ruleset.</description>
+
+    <!-- Configurations -->
+    <config name="minimum_supported_wp_version" value="5.0.0"/>
+    <config name="testVersion" value="7.0-"/>
+
+    <!-- WordPress Coding Standards -->
+    <rule ref="WordPress" />
+
+    <!-- Exclude unnecessary rules -->
+    <rule ref="WordPress.Files.FileName.InvalidClassFileName">
+        <exclude-pattern>includes/*</exclude-pattern>
+    </rule>
+
+    <rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+        <exclude-pattern>includes/*</exclude-pattern>
+    </rule>
+
+    <!-- i18n text domain -->
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array" value="mero-guten-forms" />
+        </properties>
+    </rule>
+
+    <!-- Exclude paths -->
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/dist*/*</exclude-pattern>
+</ruleset>
