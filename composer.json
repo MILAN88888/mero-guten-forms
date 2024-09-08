@@ -1,0 +1,54 @@
+{
+	"name": "mero-guten-forms/mero-guten-forms",
+	"description": "MeroGutenForms makes it easy to integrate and manage custom contact forms directly within the Gutenberg block editor, providing a seamless and user-friendly experience.",
+	"type": "wordpress-plugin",
+	"version": "1.0.0",
+	"autoload": {
+		"psr-4": {
+			"MeroGutenForms\\": "includes/"
+		}
+	},
+	"authors": [
+		{
+			"name": "MGF@milan",
+			"email": "chaudharymilan996@gmail.com"
+		}
+	],
+	"require-dev": {
+		"wp-cli/wp-cli": "^2.4",
+		"wp-cli/i18n-command": "^2.2",
+		"dealerdirect/phpcodesniffer-composer-installer": "^0.7.1",
+		"squizlabs/php_codesniffer": "^3.6",
+		"phpcompatibility/phpcompatibility-wp": "^2.1"
+	},
+	"scripts": {
+		"phpcs": [
+			"phpcs -s -p"
+		],
+		"phpcs-pre-commit": [
+			"phpcs -s -p -n"
+		],
+		"phpcbf": [
+			"phpcbf -p"
+		],
+		"makepot-audit": [
+			"wp --allow-root i18n make-pot . --exclude=\".github,.wordpress-org,bin,node_modules,vendor,tests,build\" --slug=mero-guten-forms"
+		],
+		"makepot": [
+			"@makepot-audit --skip-audit"
+		]
+	},
+	"extra": {
+		"scripts-description": {
+			"phpcs": "Analyze code against the WordPress coding standards with PHP_CodeSniffer",
+			"phpcbf": "Fix coding standards warnings/errors automatically with PHP Code Beautifier",
+			"makepot-audit": "Generate languages/mero-guten-forms.pot file and run audit",
+			"makepot": "Generate languages/mero-guten-forms.pot file"
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
+}
