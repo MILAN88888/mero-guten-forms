@@ -16,6 +16,7 @@ namespace MeroGutenForms;
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+use MeroGutenForms\Controller\Admin\MenuController;
 use MeroGutenForms\Traits\Singleton;
 
 /**
@@ -36,6 +37,6 @@ final class MeroGutenForms {
 	 * @return void
 	 */
 	protected function __construct() {
-		error_log( 'in' );
+		MenuController::instance();
 	}
 }
