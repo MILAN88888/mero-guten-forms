@@ -4,9 +4,12 @@ const DependencyExtractionWebpackPlugin = require("@wordpress/dependency-extract
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, "src/block/index.tsx"),
-    style: path.resolve(__dirname, "src/block/style.scss"),
-    editor: path.resolve(__dirname, "src/block/editor.scss")
+    index: [
+      "react-hot-loader/patch",
+      path.resolve(process.cwd(), "./src/blocks", "index.ts")
+    ],
+    style: path.resolve(process.cwd(), "./src/blocks", "style.scss"),
+    editor: path.resolve(process.cwd(), "./src/blocks", "editor.scss")
   },
   output: {
     path: path.resolve(__dirname, "build"),
