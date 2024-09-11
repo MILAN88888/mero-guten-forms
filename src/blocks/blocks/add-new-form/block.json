@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/block-json/1.1",
+	"apiVersion": 3,
+	"name": "mero-guten-forms/add-new-form",
+	"version": "1.0.0",
+	"title": "User Login",
+	"category": "mero-guten-forms",
+	"description": "Display login form.",
+	"keywords": [
+		"add new form"
+	],
+	"textdomain": "mero-guten-forms",
+	"example": {
+		"attributes": {}
+	},
+	"supports": {},
+	"attributes": {},
+	"editorScript": "mero-guten-forms-block-editor",
+	"editorStyle": "mero-guten-forms-block-editor"
+}
