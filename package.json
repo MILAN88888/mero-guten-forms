@@ -1,0 +1,12 @@
+{
+	"name": "mero-guten-forms",
+	"version": "1.0.0",
+	"description": "MeroGutenForms makes it easy to integrate and manage custom contact forms directly within the Gutenberg block editor, providing a seamless and user-friendly experience.",
+	"main": "index.tsx",
+	"repository": "https://github.com/MILAN88888/mero-guten-forms.git",
+	"author": "MGF@MILAN88888 <chaudharymilan996@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@wordpress/scripts": "^29.0.0"
+	}
+}
