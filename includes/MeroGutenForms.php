@@ -17,6 +17,7 @@ namespace MeroGutenForms;
 defined( 'ABSPATH' ) || exit;
 
 use MeroGutenForms\Controller\Admin\MenuController;
+use MeroGutenForms\Controller\BlocksController;
 use MeroGutenForms\Traits\Singleton;
 
 /**
@@ -38,5 +39,6 @@ final class MeroGutenForms {
 	 */
 	protected function __construct() {
 		MenuController::instance();
+		BlocksController::instance();
 	}
 }
