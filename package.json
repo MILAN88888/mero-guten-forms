@@ -9,6 +9,7 @@
 		"@babel/core": "^7.25.2",
 		"@babel/preset-env": "^7.25.4",
 		"@babel/preset-react": "^7.24.7",
+		"@types/webpack-bundle-analyzer": "^4.7.0",
 		"@types/wordpress__blocks": "^12.5.14",
 		"@types/wordpress__components": "^23.8.0",
 		"@types/wordpress__element": "^2.14.1",
@@ -25,6 +26,7 @@
 		"babel-loader": "^9.1.3",
 		"copy-webpack-plugin": "^12.0.2",
 		"css-loader": "^7.1.2",
+		"fork-ts-checker-webpack-plugin": "^9.0.2",
 		"node-sass": "^9.0.0",
 		"postcss-loader": "^8.1.1",
 		"react-hot-loader": "^4.13.1",
@@ -33,16 +35,14 @@
 		"ts-loader": "^9.5.1",
 		"typescript": "^5.6.2",
 		"webpack": "^5.94.0",
+		"webpack-bundle-analyzer": "^4.10.2",
 		"webpack-cli": "^5.1.4",
-		"webpack-dev-server": "^5.1.0"
+		"webpack-dev-server": "^4.15.1",
+		"webpackbar": "^6.0.1"
 	},
 	"scripts": {
 		"build": "webpack --config ./webpack.config.js --mode production",
-		"start": "webpack --config ./webpack.config.js --mode development",
-		"format": "prettier --write '**/*.{js,css}'",
-		"lint:css": "stylelint '**/*.css'",
-		"lint:js": "eslint '**/*.js'",
-		"packages-update": "npm update",
-		"plugin-zip": "zip -r plugin.zip ."
+		"start": "webpack --watch --config ./webpack.config.js --mode development",
+		"makepot": "composer run makepot"
 	}
 }
