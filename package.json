@@ -43,6 +43,7 @@
 	"scripts": {
 		"build": "webpack --config ./webpack.config.js --mode production",
 		"start": "webpack --watch --config ./webpack.config.js --mode development",
-		"makepot": "composer run makepot"
+		"makepot": "composer run makepot",
+		"dev": "webpack-dev-server --mode development --hot --config ./webpack.config.js"
 	}
 }
