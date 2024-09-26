@@ -10,6 +10,7 @@ namespace MeroGutenForms\Controller;
 
 use MeroGutenForms\Traits\Singleton;
 use MeroGutenForms\BlockTypes\AddNewForm;
+use MeroGutenForms\Helpers\CoreHelper;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -47,7 +48,7 @@ class BlocksController {
 		$enqueue_script = array( 'wp-blocks', 'wp-element', 'wp-i18n', 'wp-editor', 'wp-components', 'react', 'react-dom' );
 		wp_register_script(
 			'mero-guten-forms-block-editor',
-			$this->plugin_url() . '/build/blocks.min.js',
+			$this->assets_url( 'blocks.min.js' ),
 			$enqueue_script,
 			MGF_VERSION,
 			true
@@ -55,15 +56,22 @@ class BlocksController {
 
 		wp_enqueue_script( 'mero-guten-forms-block-editor' );
 	}
+
 	/**
 	 * PLugin url.
 	 *
 	 * @since 1.0.0
-	 * @param string $path
+	 * @param string $filename
 	 * @return void
 	 */
-	public function plugin_url( $path = '/' ) {
-		return untrailingslashit( plugins_url( $path, MGF_PLUGIN_FILE ) );
+	public function assets_url( $filename, $is_dev = true ) {
+		$path = plugins_url( 'build/', MGF_PLUGIN_FILE );
+
+		if ( $is_dev && CoreHelper::is_development() ) {
+			$path = 'http://localhost:3000/dist/';
+		}
+
+		return apply_filters( 'mgf_asset_url', $path . $filename );
 	}
 	/**
 	 * Add "Mero Guten Forms" category to the blocks listing in post edit screen.
